@@ -28,6 +28,13 @@ is calibrated to ISO/IEC 17025 standards.
 4) Read the Temperature and Humidity using the 'HDC302xDataResult' Struct.
 ```HDC302xDataResult result = hdc.ReadData();```
 
+# Future improvements
+
+1) Add more read options (besides the single read)
+2) Configure tempearture alerts
+3) Read chip Min and Max readings
+4) ... let me know!
+
 # More information
 
 TI Datasheet for more information: [Download PDF](https://www.ti.com/product/HDC3020)
