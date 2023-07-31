@@ -1,3 +1,5 @@
+[![.github/workflows/main.yml](https://github.com/SndrSchnklshk/HDC302x/actions/workflows/main.yml/badge.svg)](https://github.com/SndrSchnklshk/HDC302x/actions/workflows/main.yml)
+
 # Texas Instruments (TI) HDC3020, HDC3021, HDC3022 Temperature sensors
 
 Quick and easy to use Library for the TI HDC302x tempearture and humidity sensors (HDC3020, HDC3021, HDC3022). 
