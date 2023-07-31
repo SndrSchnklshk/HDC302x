@@ -39,4 +39,4 @@ is calibrated to ISO/IEC 17025 standards.
 
 TI Datasheet for more information: [Download PDF](https://www.ti.com/product/HDC3020)
 
-This lib is heavily based on the data Josh Wyatt (Taxas Intruments Inc) has provided. If you buy me a beer, don't forget him as well ;)
+This lib is heavily based on the data Josh Wyatt (Texas Intruments Inc) has provided. If you buy me a beer, don't forget him as well ;)
