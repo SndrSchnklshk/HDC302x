@@ -47,7 +47,7 @@ HDC302xDataResult HDC302x::ReadData()
 
         if (getHumidityCorrection() != 0.0f)                                  // Is there a neeed to apply any correction on the RH? (issue reported by user jxl77 on 2024-02-06)
         {                  
-             readDataResult.Humidity = readDataResult.Humidity - getHumidityCorrection();             // Apply a correction
+             readDataResult.Humidity = readDataResult.Humidity + getHumidityCorrection();             // Apply and add a correction to the humidity
         }
        
         HDC302x_temp_MSB = (buffer[0] << 8);                                           // shift left
