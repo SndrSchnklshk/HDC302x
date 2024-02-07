@@ -46,7 +46,7 @@ HDC302xDataResult HDC302x::ReadData()
         readDataResult.Humidity = (((float)(HDC302x_hum_DEC)) / 65535) * 100; // do math according to the HDC3x datasheet
 
         if (getHumidityCorrection() != 0.0f)                                  // Is there a neeed to apply any correction on the RH? (issue reported by user jxl77 on 2024-02-06)
-        {                  
+        {
              readDataResult.Humidity = readDataResult.Humidity + getHumidityCorrection();             // Apply and add a correction to the humidity
         }
        
