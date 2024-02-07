@@ -39,6 +39,7 @@ class HDC302x
 private:
     bool isInitialized = false;
     uint8_t address = HDC302X_ADDRESS1;
+    float humidityCorrection = 0.0f;
 
     uint16_t HDC302x_hum_MSB;
     uint16_t HDC302x_hum_DEC;
@@ -57,6 +58,21 @@ public:
         : wire(twoWire)
     {
     }
+
+    /// @brief Gets the humidity correction, default is 0
+    /// @return the humidity correction
+    float getHumidityCorrection() const
+    {
+        return this->humidityCorrection;
+    }
+
+    /// @brief Sets this correction on the humidity. Correction will be added to the end result.
+    /// @param correction to be applied
+    void setHumidityCorrection(float correction)
+    {
+        this->humidityCorrection = correction;
+    }
+
     /// @brief Initialize i2c connection with the sensor
     /// @param address I2C address
     bool Initialize(uint8_t address = HDC302X_ADDRESS1);

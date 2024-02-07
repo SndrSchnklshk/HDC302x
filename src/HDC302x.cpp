@@ -44,8 +44,12 @@ HDC302xDataResult HDC302x::ReadData()
         HDC302x_hum_MSB = buffer[3] << 8;                                     // shift left
         HDC302x_hum_DEC = (HDC302x_hum_MSB + buffer[4]);                      // get value for calculation, made from iBuff index array values 0 and 1 for humidity reading.
         readDataResult.Humidity = (((float)(HDC302x_hum_DEC)) / 65535) * 100; // do math according to the HDC3x datasheet
-        readDataResult.Humidity = readDataResult.Humidity - 1.20;             // Correction
 
+        if (getHumidityCorrection() != 0.0f)                                  // Is there a neeed to apply any correction on the RH? (issue reported by user jxl77 on 2024-02-06)
+        {                  
+             readDataResult.Humidity = readDataResult.Humidity - getHumidityCorrection();             // Apply a correction
+        }
+       
         HDC302x_temp_MSB = (buffer[0] << 8);                                           // shift left
         HDC302x_temp_DEC = (HDC302x_temp_MSB + buffer[1]);                             // get value for calculation, made from iBuff index array values 0 and 1 for temp reading.
         readDataResult.Temperature = ((float)(HDC302x_temp_DEC) / 65535) * (175) - 45; // do math according to the HDC3x datasheet
