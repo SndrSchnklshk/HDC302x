@@ -86,4 +86,12 @@ class HDC3020 : public HDC302x
 {
 };
 
+class HDC3021 : public HDC302x
+{
+};
+
+class HDC3022 : public HDC302x
+{
+};
+
 #endif
