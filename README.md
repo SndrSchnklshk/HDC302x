@@ -54,8 +54,13 @@ void setup()
     Serial.println("Ola! Feeling chill?");      // Welcome message
     if (!hdc.Initialize(HDC302X_ADDRESS1))      // Did the initialization fail?
     {
-        Serial.println("Sorry, cannot find sensor with the selected address"); 
-    } 
+        Serial.println("Sorry, cannot find sensor with the selected address!");
+    }
+    else
+    {
+        Serial.println("HDC302x Sensor found!");     // Print found-it-message
+        hdc.setHumidityCorrection(+1.2f);            // (Optionally), sets a software correction for the Relative Humidity
+    }
 }
 
 void loop()
@@ -63,8 +68,8 @@ void loop()
     HDC302xDataResult result = hdc.ReadData();  // Calculate the temperature
     Serial.print("Temperature is ");            // Begin printing output
     Serial.print(result.Temperature);           // Print the Temperature
-    Serial.print("°C, Humidity is ");           // Print the degrees plus a newline
-    Serial.println(result.Humidity);            // Print the Temperature
+    Serial.print("°C, Humidity is ");           // Print the degrees symbol and more
+    Serial.println(result.Humidity);            // Print the Relative Humidity
     delay(5000);                                // Wait 5 seconds
 }
 ```
