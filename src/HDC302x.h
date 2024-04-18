@@ -51,7 +51,7 @@ private:
 
 protected:
     TwoWire *wire;
-    uint8_t buffer[4] = {0};
+    uint8_t buffer[6] = {0};
 
 public:
     HDC302x(TwoWire *twoWire = &Wire) 
